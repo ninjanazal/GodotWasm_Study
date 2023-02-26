@@ -50,12 +50,10 @@ root
 ### Prints
 
 ```Chrome console```
-<br />
-![Web Console](prints\print_webconsole.png)
+![Web Console](prints\print_webconsole.PNG)
 
 ``` GdLib ```
-
-![GDLib](prints\godot_gdlibrary.png)
+![GDLib](prints\godot_gdlibrary.PNG)
 
 ---
 ### Notes
