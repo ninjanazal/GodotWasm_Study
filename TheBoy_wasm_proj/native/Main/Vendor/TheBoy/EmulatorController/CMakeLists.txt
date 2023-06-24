@@ -1,0 +1,13 @@
+set ( SOURCE_THEBOY
+	${SOURCE_THEBOY}
+	${CMAKE_CURRENT_SOURCE_DIR}/emulatorController.cpp
+
+	PARENT_SCOPE
+)
+
+set ( HEADER_THEBOY 
+	${HEADER_THEBOY}
+	${CMAKE_CURRENT_SOURCE_DIR}/emulatorController.h
+
+	PARENT_SCOPE
+)

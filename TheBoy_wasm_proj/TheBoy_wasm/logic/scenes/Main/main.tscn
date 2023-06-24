@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/graphics/icons/MaBoy_EmuIcon_32.png" type="Texture" id=1]
+[ext_resource path="res://resources/graphics/fonts/JetBrainsMono_s30.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/graphics/fonts/JetBrainsMono_s20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://logic/src/Main/main.gdns" type="Script" id=4]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1046.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="topBar" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 0.05
+color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/topBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/topBar/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 56, 0 )
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/topBar/HBoxContainer"]
+margin_left = 96.0
+margin_right = 528.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Godot Emulation platform"
+valign = 1
+
+[node name="pathSelection" type="HBoxContainer" parent="CanvasLayer/topBar/HBoxContainer"]
+margin_left = 568.0
+margin_right = 1920.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+custom_constants/separation = 50
+alignment = 2
+
+[node name="currentPath" type="Label" parent="CanvasLayer/topBar/HBoxContainer/pathSelection"]
+margin_top = 13.0
+margin_right = 1218.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+align = 1
+
+[node name="selectButton" type="Button" parent="CanvasLayer/topBar/HBoxContainer/pathSelection"]
+margin_left = 1268.0
+margin_right = 1352.0
+margin_bottom = 54.0
+text = "Select Rom"
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer"]
+anchor_left = 0.193229
+anchor_top = 0.105556
+anchor_right = 0.746
+anchor_bottom = 0.946
+margin_right = 0.679932
+margin_bottom = 0.319946
+window_title = "Open a File"
+resizable = true
+dialog_text = "Select a rom to load"
+mode = 0
+filters = PoolStringArray( "*.gb ; Gameboy Rom" )
+show_hidden_files = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="body" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.184314, 0.184314, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="outputView" type="TextureRect" parent="body"]
+anchor_left = 0.0276042
+anchor_top = 0.0861111
+anchor_right = 0.594271
+anchor_bottom = 0.968518
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="vramView" type="TextureRect" parent="body"]
+anchor_left = 0.618229
+anchor_top = 0.399074
+anchor_right = 0.983333
+anchor_bottom = 0.967593
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="body"]
+anchor_left = 0.621354
+anchor_top = 0.0861111
+anchor_right = 0.983333
+anchor_bottom = 0.399074
+custom_fonts/normal_font = ExtResource( 3 )
+text = "This a test text"
+__meta__ = {
+"_edit_use_anchors_": true
+}
